@@ -4,6 +4,8 @@ from fastapi import FastAPI, Query
 
 my_app = FastAPI()
 
+# クエリパラメータのメタデータは Query により宣言できる
+
 
 @my_app.get("/items/")
 async def read_items(
