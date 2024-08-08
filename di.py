@@ -17,6 +17,8 @@ async def common_parameters(
     return {"q": q, "skip": skip, "limit": limit}
 
 
+# use_cache (default=True) : 1 つのパスオペレータで同じ Depends が複数呼び出されるとき、
+# 一度呼び出した結果をキャッシュするかどうかを指定する
 @app.get("/items/")
 async def read_items(commons: dict = Depends(common_parameters, use_cache=False)):
     return commons
