@@ -13,6 +13,8 @@ uvicorn = {extras = ["standard"], version = "^0.30.3"}
 python-multipart = "^0.0.9"
 async-exit-stack = "^1.0.1"
 async-generator = "^1.10"
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
 
 
 [build-system]
