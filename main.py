@@ -1,5 +1,5 @@
 from enum import Enum  # 標準ライブラリ
-from typing import Union  # 標準ライブラリ
+import uvicorn
 
 from fastapi import FastAPI
 
@@ -67,3 +67,8 @@ async def get_model(model_name: ModelName):
 @my_app.get("/files/{file_path:path}")
 async def read_file(file_path: str):
     return {"file_path": file_path}
+
+
+# shell の代わりに python 上で uvicorn を実行することも可能
+if __name__ == "__main__":
+    uvicorn.run(my_app, host="0.0.0.0", port=8000)
